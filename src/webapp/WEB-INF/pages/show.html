@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User information</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        form {
+            margin: 50px auto;
+            width: 400px;
+            max-width: 90%;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #CCCCCC;
+        }
+
+        label {
+            display: inline-block;
+            width: 130px;
+            text-align: left;
+            font-size: 18px;
+            color: #006699;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #006699;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{/users}" th:object="${user}">
+    <h1>User information</h1>
+    <label for="name"> Enter name:</label>
+    <br>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br>
+    <label for="lastName"> Enter Lastname:</label>
+    <br>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
+    <br>
+    <label for="age"> Enter age:</label>
+    <br>
+    <input type="text" th:field="*{age}" id="age"/>
+    <br>
+
+    <input type="submit" value="OK"/>
+
+</form>
+
+</body>
+</html>

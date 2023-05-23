@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        div {
+            margin: 50px auto;
+            width: 400px;
+            max-width: 90%;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #CCCCCC;
+        }
+
+        h1 {
+            color: #006699;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Messages</h1>
+    <th:block th:each="msg : ${messages}">
+        <h1 th:text="${msg}"></h1>
+    </th:block>
+</div>
+</body>
+</html>
